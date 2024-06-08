@@ -6,7 +6,8 @@ export default (router: express.Router) => {
     // router.get('/users', isAuthenticated, getAllUsers)
     // router.delete('/logs/:id', isAuthenticated, isOwner, deleteLog)
     // router.patch('/logs/:id', isAuthenticated, isOwner, updateLog)
-    router.get('/logs', isAuthenticated, getAllLogs)
+    // router.get('/logs', isAuthenticated, getAllLogs)
+    router.get('/logs', getAllLogs)
     router.delete('/logs/:id', isAuthenticated, isOwner, deleteLog)
     router.patch('/logs/:id', isAuthenticated, isOwner, updateLog)
 }
