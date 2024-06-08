@@ -1,5 +1,3 @@
-// logs.ts
-
 import mongoose from 'mongoose';
 
 const LogSchema = new mongoose.Schema({
@@ -12,7 +10,7 @@ const LogSchema = new mongoose.Schema({
 export const LogModel = mongoose.model('Logs', LogSchema);
 
 export const getLogs = () => LogModel.find();
-export const getLogById = (id: string) => LogModel.findById(id);
+export const getLogById = (id: string) => LogModel.findById({id});
 export const createLog = (values: Record<string, any>) => new LogModel(values).save().then((log) => log.toObject());
-export const deleteLogById = (id: string) => LogModel.findByIdAndDelete(id);
+export const deleteLogById = (id: string) => LogModel.findByIdAndDelete({ _id: id });
 export const updateLogById = (id: string, values: Record<string, any>) => LogModel.findByIdAndUpdate(id, values);

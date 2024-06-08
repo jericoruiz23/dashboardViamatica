@@ -45,9 +45,11 @@ export const deleteLog = async (req: express.Request, res: express.Response) => 
         if (!deletedLog) {
             return res.sendStatus(404);
         }
+        console.log('Borrado exitoso del log: ',id);
+        
         return res.sendStatus(204);
     } catch (error) {
-        console.error('Error deleting log:', error);
+        console.error('Error borrando log:', error);
         return res.sendStatus(400);
     }
 };

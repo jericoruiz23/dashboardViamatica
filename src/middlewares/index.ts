@@ -13,7 +13,8 @@ export const isOwner = async (req: express.Request, res: express.Response, next:
             return res.sendStatus(403)
         }
         if(currentUserId.toString()!== id){
-            console.log('no coincide el id');
+            console.log('no coincide el id1: ', currentUserId.toString());
+            console.log('no coincide el id2: ', id);
             return res.sendStatus(403)
         }
 
