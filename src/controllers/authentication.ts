@@ -4,9 +4,9 @@ import { random, authentication } from '../helpers';
 
 export const login = async (req: express.Request, res: express.Response) => {
     try {
-        const { email, password } = req.body;
+        const { email, password} = req.body;
         console.log(email, 'email');
-        console.log(password, 'passss');
+        console.log(password, 'passss recibidos al back');
 
         if (!email || !password) {
             console.log('Incorrect User or Password');
@@ -32,7 +32,7 @@ export const login = async (req: express.Request, res: express.Response) => {
         return res.status(200).json(user).end();
 
     } catch (error) {
-        console.log(error);
+        console.log(error,'111111');
         return res.sendStatus(400);
     }
 };
@@ -76,4 +76,6 @@ export const register = async (req: express.Request, res: express.Response) => {
     }
 
 };
+
+
 
